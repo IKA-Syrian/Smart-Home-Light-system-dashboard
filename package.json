@@ -1,0 +1,47 @@
+{
+    "name": "iot-project",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "node test-api.js",
+        "seed": "node scripts/seedDatabase.js",
+        "seed:force": "node scripts/seedDatabase.js --force",
+        "setup": "node scripts/startProject.js",
+        "setup:force": "node scripts/startProject.js --force",
+        "quick-start": "npm install && npm run seed && npm start",
+        "migration:generate": "npx sequelize-cli migration:generate --name",
+        "migration:up": "node scripts/runMigrations.js up",
+        "migration:down": "node scripts/runMigrations.js down",
+        "migration:status": "node scripts/runMigrations.js status"
+    },
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "dependencies": {
+        "@serialport/parser-readline": "^11.0.1",
+        "axios": "^1.6.7",
+        "bcrypt": "^6.0.0",
+        "bull": "^4.16.5",
+        "cors": "^2.8.5",
+        "cron-parser": "^5.3.0",
+        "dotenv": "^16.5.0",
+        "express": "^5.1.0",
+        "jsonwebtoken": "^9.0.2",
+        "mysql2": "^3.14.1",
+        "node-cron": "^3.0.3",
+        "redis": "^5.5.6",
+        "sequelize": "^6.37.7",
+        "sequelize-cli": "^6.6.3",
+        "serialport": "^11.0.1",
+        "swagger-jsdoc": "^6.2.8",
+        "swagger-ui-express": "^5.0.0",
+        "umzug": "^3.8.2",
+        "ws": "^8.18.2"
+    }
+}
